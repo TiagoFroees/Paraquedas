@@ -6,6 +6,7 @@
 package model;
 
 import java.util.Calendar;
+import java.util.List;
 
 /**
  *
@@ -16,6 +17,10 @@ public class venda {
     private Calendar data;
     private Calendar hora;
     private Float valortotal;
+    private pagamento pagamento;
+    private cliente cliente;
+    private funcionario funcionario;
+    private List <itemvenda> itemvendas;
 
     public Calendar getData() {
         return data;

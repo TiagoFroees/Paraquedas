@@ -6,6 +6,7 @@
 package model;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  *
@@ -14,6 +15,7 @@ import java.util.Date;
 public class pagamento {
     private Date dataPagamento;
     private Float valorPago;
+    private List<formapgto> formapgtos;
 
     public Date getDataPagamento() {
         return dataPagamento;

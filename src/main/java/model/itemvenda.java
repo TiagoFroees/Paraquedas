@@ -12,6 +12,7 @@ package model;
 public class itemvenda {
     private Float valor;
     private Integer quantidade;
+    private estoque estoque;
 
     public Float getValor() {
         return valor;

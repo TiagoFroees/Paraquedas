@@ -15,6 +15,7 @@ public class produto {
     private Character modelo;
     private Integer CodProduto;
     private Integer Estoque;
+    private categoria categoria;
 
     public Character getNome() {
         return nome;

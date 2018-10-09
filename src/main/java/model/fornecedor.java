@@ -9,7 +9,7 @@ package model;
  *
  * @author Lourdes
  */
-public class fornecedor {
+public class fornecedor extends pessoa {
     private Character cnpj;
     private Character contato;
 

@@ -9,6 +9,8 @@ package model;
  *
  * @author Lourdes
  */
-public class funcionario {
+public class funcionario extends pessoa {
+    private tipo tipo;
+    
     
 }

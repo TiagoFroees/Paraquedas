@@ -9,6 +9,6 @@ package model;
  *
  * @author Lourdes
  */
-public class cliente {
+public class cliente extends pessoa {
     
 }

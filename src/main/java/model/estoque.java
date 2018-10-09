@@ -5,6 +5,8 @@
  */
 package model;
 
+import java.util.List;
+
 /**
  *
  * @author Lourdes
@@ -12,6 +14,10 @@ package model;
 public class estoque {
     private Integer quantidade;
     private Integer codEstoque;
+    private cor cor;
+    private tamanho tamanho;
+   
+    private List<produto> produtos;
 
     public Integer getQuantidade() {
         return quantidade;

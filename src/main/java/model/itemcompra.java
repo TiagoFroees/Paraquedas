@@ -11,6 +11,7 @@ package model;
  */
 public class itemcompra {
     private Float valorCompra;
+    private estoque estoque;
 
     public Float getValorCompra() {
         return valorCompra;

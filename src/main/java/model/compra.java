@@ -6,6 +6,7 @@
 package model;
 
 import java.util.Calendar;
+import java.util.List;
 
 /**
  *
@@ -14,6 +15,8 @@ import java.util.Calendar;
 public class compra {
     private Calendar data;
     private Float valorTotal;
+    private fornecedor fornecedor;
+    private List <itemcompra> compras;
 
     public Calendar getData() {
         return data;
