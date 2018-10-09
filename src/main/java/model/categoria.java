@@ -10,6 +10,6 @@ package model;
  * @author Lourdes
  */
 public enum categoria {
-    calcado,roupa,acessorio;
+    Calcado, Roupa, Acessorio;
     
 }
