@@ -3,12 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package model;
+package modelOld;
 
 /**
  *
- * @author aluno
+ * @author Lourdes
  */
-public class Fornecedor {
+public enum Categoria {
+    Calcado, Roupa, Acessorio;
     
 }
