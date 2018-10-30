@@ -18,6 +18,11 @@
     <class>model.Tamanho</class>
     <class>model.Tipo</class>
     <class>model.Venda</class>
+    <class>modelV1.Categoria</class>
+    <class>modelV1.Cliente</class>
+    <class>modelV1.Compra</class>
+    <class>modelV1.Cor</class>
+    <class>modelV1.Estoque</class>
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties>
       <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
