@@ -23,6 +23,17 @@
     <class>modelV1.Compra</class>
     <class>modelV1.Cor</class>
     <class>modelV1.Estoque</class>
+    <class>modelV1.FormaPgto</class>
+    <class>modelV1.Fornecedor</class>
+    <class>modelV1.Funcionario</class>
+    <class>modelV1.ItemCompra</class>
+    <class>modelV1.ItemVenda</class>
+    <class>modelV1.Pagamento</class>
+    <class>modelV1.Pessoa</class>
+    <class>modelV1.Produto</class>
+    <class>modelV1.Tamanho</class>
+    <class>modelV1.Tipo</class>
+    <class>modelV1.Venda</class>
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties>
       <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
