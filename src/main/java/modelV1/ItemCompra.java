@@ -19,9 +19,31 @@ import javax.persistence.Id;
 public class ItemCompra implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    
+    private Float valorCompra;
+    private Estoque estoque;
 
+    public Float getValorCompra() {
+        return valorCompra;
+    }
+
+    public void setValorCompra(Float valorCompra) {
+        this.valorCompra = valorCompra;
+    }
+
+    public Estoque getEstoque() {
+        return estoque;
+    }
+
+    public void setEstoque(Estoque estoque) {
+        this.estoque = estoque;
+    }
+    
+    
+
+    
     public Long getId() {
         return id;
     }
