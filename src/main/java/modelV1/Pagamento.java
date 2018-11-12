@@ -6,6 +6,8 @@
 package modelV1;
 
 import java.io.Serializable;
+import java.time.LocalDate;
+import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -19,8 +21,38 @@ import javax.persistence.Id;
 public class Pagamento implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    
+    private LocalDate dataPagamento;
+    private Float valorPago;
+    private List<FormaPgto>formapgtos;
+
+    public LocalDate getDataPagamento() {
+        return dataPagamento;
+    }
+
+    public void setDataPagamento(LocalDate dataPagamento) {
+        this.dataPagamento = dataPagamento;
+    }
+
+    public Float getValorPago() {
+        return valorPago;
+    }
+
+    public void setValorPago(Float valorPago) {
+        this.valorPago = valorPago;
+    }
+
+    public List<FormaPgto> getFormapgtos() {
+        return formapgtos;
+    }
+
+    public void setFormapgtos(List<FormaPgto> formapgtos) {
+        this.formapgtos = formapgtos;
+    }
+    
+    
 
     public Long getId() {
         return id;
