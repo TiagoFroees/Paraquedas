@@ -23,6 +23,7 @@ public class Categoria implements Serializable {
     private String roupa;
     private String calcado;
     private String acessorio;
+    
     private Long id;
 
     public Long getId() {
