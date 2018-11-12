@@ -19,8 +19,10 @@ import javax.persistence.Id;
 public class Tipo implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    
+    private String gerente, vendedor;
 
     public Long getId() {
         return id;

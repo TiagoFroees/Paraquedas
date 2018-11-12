@@ -6,6 +6,8 @@
 package modelV1;
 
 import java.io.Serializable;
+import java.time.LocalDate;
+import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -19,8 +21,76 @@ import javax.persistence.Id;
 public class Venda implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    
+    private LocalDate data;
+    private LocalDate hora;
+    private Float valorTotal;
+    private Pagamento pagamento;
+    private Cliente cliente;
+    private Funcionario funcionario;
+    private List<ItemVenda>itemvendas;
+
+    public LocalDate getData() {
+        return data;
+    }
+
+    public void setData(LocalDate data) {
+        this.data = data;
+    }
+
+    public LocalDate getHora() {
+        return hora;
+    }
+
+    public void setHora(LocalDate hora) {
+        this.hora = hora;
+    }
+
+    public Float getValorTotal() {
+        return valorTotal;
+    }
+
+    public void setValorTotal(Float valorTotal) {
+        this.valorTotal = valorTotal;
+    }
+
+    public Pagamento getPagamento() {
+        return pagamento;
+    }
+
+    public void setPagamento(Pagamento pagamento) {
+        this.pagamento = pagamento;
+    }
+
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
+    }
+
+    public Funcionario getFuncionario() {
+        return funcionario;
+    }
+
+    public void setFuncionario(Funcionario funcionario) {
+        this.funcionario = funcionario;
+    }
+
+    public List<ItemVenda> getItemvendas() {
+        return itemvendas;
+    }
+
+    public void setItemvendas(List<ItemVenda> itemvendas) {
+        this.itemvendas = itemvendas;
+    }
+    
+    
+    
+    
 
     public Long getId() {
         return id;
