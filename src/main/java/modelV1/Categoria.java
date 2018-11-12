@@ -19,7 +19,8 @@ import javax.persistence.Id;
 public class Categoria implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private String roupa,calcado,acessorio;
     private Long id;
 
     public Long getId() {
