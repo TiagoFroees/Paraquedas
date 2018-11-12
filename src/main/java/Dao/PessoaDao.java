@@ -5,11 +5,10 @@
  */
 package Dao;
 
-import java.io.Serializable;
+import java.util.List;
 import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.EntityNotFoundException;
-import javax.persistence.Persistence;
+import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 import modelV1.Pessoa;
 
 /**
@@ -17,79 +16,22 @@ import modelV1.Pessoa;
  * @author Tiago-PC
  */
 public class PessoaDao {
-    
-    public class PessoaJpaController implements Serializable {
 
-    public PessoaJpaController() {
+    @PersistenceContext
+    EntityManager em;
 
-        this.emf = Persistence.createEntityManagerFactory("Paraquedas");
+    public void incluir(Pessoa pessoa) {
+        em.persist(pessoa);
+    }
+    public void alterar(Pessoa pessoa) {
+        em.merge(pessoa);
+    }
+    public void excluir(Pessoa pessoa) {
+        em.remove(em.merge(pessoa));
     }
 
-    public PessoaJpaController(EntityManagerFactory emf) {
-        this.emf = emf;
-    }
-    private EntityManagerFactory emf = null;
-
-    public EntityManager getEntityManager() {
-        return emf.createEntityManager();
-    }
-
-    public void create(Pessoa pessoa) {
-        EntityManager em = null;
-        try {
-            em = getEntityManager();
-            em.getTransaction().begin();
-            em.persist(pessoa);
-            em.getTransaction().commit();
-        } finally {
-            if (em != null) {
-                em.close();
-            }
-        }
-    }
-
-    public void edit(Pessoa pessoa) throws NonexistentEntityException, Exception {
-        EntityManager em = null;
-        try {
-            em = getEntityManager();
-            em.getTransaction().begin();
-            pessoa = em.merge(pessoa);
-            em.getTransaction().commit();
-        } catch (Exception ex) {
-            String msg = ex.getLocalizedMessage();
-            if (msg == null || msg.length() == 0) {
-                Long id = pessoa.getId();
-                if (findpessoa(id) == null) {
-                    throw new NonexistentEntityException("The pessoa with id " + id + " no longer exists.");
-                }
-            }
-            throw ex;
-        } finally {
-            if (em != null) {
-                em.close();
-            }
-        }
-    }
-
-    public void destroy(Long id) throws NonexistentEntityException {
-        EntityManager em = null;
-        try {
-            em = getEntityManager();
-            em.getTransaction().begin();
-            Pessoa pessoa;
-            try {
-                pessoa = em.getReference(Pessoa.class, id);
-                pessoa.getId();
-            } catch (EntityNotFoundException enfe) {
-                throw new NonexistentEntityException("The pessoa with id " + id + " no longer exists.", enfe);
-            }
-            em.remove(pessoa);
-            em.getTransaction().commit();
-        } finally {
-            if (em != null) {
-                em.close();
-            }
-        }
-    }
+    public List<Pessoa> getPessoas() {
+        Query  q = em.createQuery("Select p from Pessoa p");
+        return q.getResultList();
     }
 }
