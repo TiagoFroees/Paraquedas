@@ -19,8 +19,56 @@ import javax.persistence.Id;
 public class Produto implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    
+    private String nome;
+    private String modelo;
+    private Integer codProduto;
+    private Integer estoque;
+    private Categoria categoria;
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getModelo() {
+        return modelo;
+    }
+
+    public void setModelo(String modelo) {
+        this.modelo = modelo;
+    }
+
+    public Integer getCodProduto() {
+        return codProduto;
+    }
+
+    public void setCodProduto(Integer codProduto) {
+        this.codProduto = codProduto;
+    }
+
+    public Integer getEstoque() {
+        return estoque;
+    }
+
+    public void setEstoque(Integer estoque) {
+        this.estoque = estoque;
+    }
+
+    public Categoria getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
+    }
+    
+    
 
     public Long getId() {
         return id;
