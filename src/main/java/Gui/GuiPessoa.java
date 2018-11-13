@@ -46,6 +46,16 @@ public class GuiPessoa implements Serializable {
         return "CadPessoas";
         
     } 
+    
+    public String gravarPessoa(){
+        if(incluindo){
+            daopessoa.incluir(pessoa);
+        }else{
+            daopessoa.alterar(pessoa);
+        }
+        pessoas = daopessoa.getPessoas();
+        return "LstPessoas";
+    }
 
     public List<Pessoa> getPessoas() {
         return pessoas;
