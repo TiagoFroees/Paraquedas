@@ -11,6 +11,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 /**
  *
@@ -25,6 +26,8 @@ public class Estoque implements Serializable {
     
     private Integer quantidade;
     private Integer codEstoque;
+    
+    @OneToMany
     private List <Produto> produtos;
     private Cor cor;
     private Tamanho tamanho;

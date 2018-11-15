@@ -12,6 +12,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 /**
  *
@@ -26,6 +27,8 @@ public class Pagamento implements Serializable {
     
     private LocalDate dataPagamento;
     private Float valorPago;
+    
+    @OneToMany
     private List<FormaPgto>formapgtos;
 
     public LocalDate getDataPagamento() {
