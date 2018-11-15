@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package modelV1;
+package Model;
 
 import java.io.Serializable;
 import javax.persistence.Entity;
@@ -16,12 +16,19 @@ import javax.persistence.Id;
  * @author aluno
  */
 @Entity
-public class Cliente implements Serializable {
+public class Pessoa implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    
+    
+    private String nome;
+    private String endereco;
+    private String bairro;
+    private String telefone;
 
+   
     public Long getId() {
         return id;
     }
@@ -40,10 +47,10 @@ public class Cliente implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Cliente)) {
+        if (!(object instanceof Pessoa)) {
             return false;
         }
-        Cliente other = (Cliente) object;
+        Pessoa other = (Pessoa) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }
@@ -52,7 +59,39 @@ public class Cliente implements Serializable {
 
     @Override
     public String toString() {
-        return "modelV1.Cliente[ id=" + id + " ]";
+        return this.nome;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
+    }
+
+    public String getBairro() {
+        return bairro;
+    }
+
+    public void setBairro(String bairro) {
+        this.bairro = bairro;
+    }
+
+    public String getTelefone() {
+        return telefone;
+    }
+
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
     }
     
 }

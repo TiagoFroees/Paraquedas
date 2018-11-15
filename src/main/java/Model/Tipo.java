@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package modelV1;
+package Model;
 
 import java.io.Serializable;
 import javax.persistence.Entity;
@@ -16,19 +16,14 @@ import javax.persistence.Id;
  * @author aluno
  */
 @Entity
-public class Pessoa implements Serializable {
+public class Tipo implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
-    
-    private String nome;
-    private String endereco;
-    private String bairro;
-    private String telefone;
+    private String gerente, vendedor;
 
-   
     public Long getId() {
         return id;
     }
@@ -47,10 +42,10 @@ public class Pessoa implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Pessoa)) {
+        if (!(object instanceof Tipo)) {
             return false;
         }
-        Pessoa other = (Pessoa) object;
+        Tipo other = (Tipo) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }
@@ -59,39 +54,7 @@ public class Pessoa implements Serializable {
 
     @Override
     public String toString() {
-        return this.nome;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public String getEndereco() {
-        return endereco;
-    }
-
-    public void setEndereco(String endereco) {
-        this.endereco = endereco;
-    }
-
-    public String getBairro() {
-        return bairro;
-    }
-
-    public void setBairro(String bairro) {
-        this.bairro = bairro;
-    }
-
-    public String getTelefone() {
-        return telefone;
-    }
-
-    public void setTelefone(String telefone) {
-        this.telefone = telefone;
+        return "modelV1.Tipo[ id=" + id + " ]";
     }
     
 }

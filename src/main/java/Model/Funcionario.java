@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package modelV1;
+package Model;
 
 import java.io.Serializable;
 import javax.persistence.Entity;
@@ -16,13 +16,23 @@ import javax.persistence.Id;
  * @author aluno
  */
 @Entity
-public class FormaPgto implements Serializable {
+public class Funcionario implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
-    private String dinheiro,cartao;
+    private Tipo tipo;
+
+    public Tipo getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(Tipo tipo) {
+        this.tipo = tipo;
+    }
+    
+    
 
     public Long getId() {
         return id;
@@ -42,10 +52,10 @@ public class FormaPgto implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof FormaPgto)) {
+        if (!(object instanceof Funcionario)) {
             return false;
         }
-        FormaPgto other = (FormaPgto) object;
+        Funcionario other = (Funcionario) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }
@@ -54,7 +64,7 @@ public class FormaPgto implements Serializable {
 
     @Override
     public String toString() {
-        return "modelV1.FormaPgto[ id=" + id + " ]";
+        return "modelV1.Funcionario[ id=" + id + " ]";
     }
     
 }

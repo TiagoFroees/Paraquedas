@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package modelV1;
+package Model;
 
 import java.io.Serializable;
 import javax.persistence.Entity;
@@ -16,24 +16,41 @@ import javax.persistence.Id;
  * @author aluno
  */
 @Entity
-public class Funcionario implements Serializable {
+public class ItemVenda implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
-    private Tipo tipo;
+    private Float valor;
+    private Integer quantidade;
+    private Estoque estoque;
 
-    public Tipo getTipo() {
-        return tipo;
+    public Float getValor() {
+        return valor;
     }
 
-    public void setTipo(Tipo tipo) {
-        this.tipo = tipo;
+    public void setValor(Float valor) {
+        this.valor = valor;
+    }
+
+    public Integer getQuantidade() {
+        return quantidade;
+    }
+
+    public void setQuantidade(Integer quantidade) {
+        this.quantidade = quantidade;
+    }
+
+    public Estoque getEstoque() {
+        return estoque;
+    }
+
+    public void setEstoque(Estoque estoque) {
+        this.estoque = estoque;
     }
     
     
-
     public Long getId() {
         return id;
     }
@@ -52,10 +69,10 @@ public class Funcionario implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Funcionario)) {
+        if (!(object instanceof ItemVenda)) {
             return false;
         }
-        Funcionario other = (Funcionario) object;
+        ItemVenda other = (ItemVenda) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }
@@ -64,7 +81,7 @@ public class Funcionario implements Serializable {
 
     @Override
     public String toString() {
-        return "modelV1.Funcionario[ id=" + id + " ]";
+        return "modelV1.ItemVenda[ id=" + id + " ]";
     }
     
 }

@@ -9,8 +9,8 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
-import modelV1.Compra;
-import modelV1.ItemCompra;
+import Model.Compra;
+import Model.ItemCompra;
 
 /**
  *

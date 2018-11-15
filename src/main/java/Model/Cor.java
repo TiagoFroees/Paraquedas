@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package modelV1;
+package Model;
 
 import java.io.Serializable;
 import javax.persistence.Entity;
@@ -16,58 +16,21 @@ import javax.persistence.Id;
  * @author aluno
  */
 @Entity
-public class Produto implements Serializable {
+public class Cor implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
-    private String nome;
-    private String modelo;
-    private Integer codProduto;
-    private Integer estoque;
-    private Categoria categoria;
+    private String cor;
 
-    public String getNome() {
-        return nome;
+    public String getCor() {
+        return cor;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setCor(String cor) {
+        this.cor = cor;
     }
-
-    public String getModelo() {
-        return modelo;
-    }
-
-    public void setModelo(String modelo) {
-        this.modelo = modelo;
-    }
-
-    public Integer getCodProduto() {
-        return codProduto;
-    }
-
-    public void setCodProduto(Integer codProduto) {
-        this.codProduto = codProduto;
-    }
-
-    public Integer getEstoque() {
-        return estoque;
-    }
-
-    public void setEstoque(Integer estoque) {
-        this.estoque = estoque;
-    }
-
-    public Categoria getCategoria() {
-        return categoria;
-    }
-
-    public void setCategoria(Categoria categoria) {
-        this.categoria = categoria;
-    }
-    
     
 
     public Long getId() {
@@ -88,10 +51,10 @@ public class Produto implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Produto)) {
+        if (!(object instanceof Cor)) {
             return false;
         }
-        Produto other = (Produto) object;
+        Cor other = (Cor) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }
@@ -100,7 +63,7 @@ public class Produto implements Serializable {
 
     @Override
     public String toString() {
-        return "modelV1.Produto[ id=" + id + " ]";
+        return "modelV1.Cor[ id=" + id + " ]";
     }
     
 }

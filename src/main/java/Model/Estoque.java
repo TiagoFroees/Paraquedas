@@ -3,9 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package modelV1;
+package Model;
 
 import java.io.Serializable;
+import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -16,23 +17,17 @@ import javax.persistence.Id;
  * @author aluno
  */
 @Entity
-public class ItemVenda implements Serializable {
+public class Estoque implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
-    private Float valor;
     private Integer quantidade;
-    private Estoque estoque;
-
-    public Float getValor() {
-        return valor;
-    }
-
-    public void setValor(Float valor) {
-        this.valor = valor;
-    }
+    private Integer codEstoque;
+    private List <Produto> produtos;
+    private Cor cor;
+    private Tamanho tamanho;
 
     public Integer getQuantidade() {
         return quantidade;
@@ -42,15 +37,40 @@ public class ItemVenda implements Serializable {
         this.quantidade = quantidade;
     }
 
-    public Estoque getEstoque() {
-        return estoque;
+    public Integer getCodEstoque() {
+        return codEstoque;
     }
 
-    public void setEstoque(Estoque estoque) {
-        this.estoque = estoque;
+    public void setCodEstoque(Integer codEstoque) {
+        this.codEstoque = codEstoque;
+    }
+
+    public List<Produto> getProdutos() {
+        return produtos;
+    }
+
+    public void setProdutos(List<Produto> produtos) {
+        this.produtos = produtos;
+    }
+
+    public Cor getCor() {
+        return cor;
+    }
+
+    public void setCor(Cor cor) {
+        this.cor = cor;
+    }
+
+    public Tamanho getTamanho() {
+        return tamanho;
+    }
+
+    public void setTamanho(Tamanho tamanho) {
+        this.tamanho = tamanho;
     }
     
     
+
     public Long getId() {
         return id;
     }
@@ -69,10 +89,10 @@ public class ItemVenda implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof ItemVenda)) {
+        if (!(object instanceof Estoque)) {
             return false;
         }
-        ItemVenda other = (ItemVenda) object;
+        Estoque other = (Estoque) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }
@@ -81,7 +101,7 @@ public class ItemVenda implements Serializable {
 
     @Override
     public String toString() {
-        return "modelV1.ItemVenda[ id=" + id + " ]";
+        return "modelV1.Estoque[ id=" + id + " ]";
     }
     
 }

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package modelV1;
+package Model;
 
 import java.io.Serializable;
 import javax.persistence.Entity;
@@ -16,20 +16,56 @@ import javax.persistence.Id;
  * @author aluno
  */
 @Entity
-public class Tamanho implements Serializable {
+public class Produto implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
-    private String tamanho;
+    private String nome;
+    private String modelo;
+    private Integer codProduto;
+    private Integer estoque;
+    private Categoria categoria;
 
-    public String getTamanho() {
-        return tamanho;
+    public String getNome() {
+        return nome;
     }
 
-    public void setTamanho(String tamanho) {
-        this.tamanho = tamanho;
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getModelo() {
+        return modelo;
+    }
+
+    public void setModelo(String modelo) {
+        this.modelo = modelo;
+    }
+
+    public Integer getCodProduto() {
+        return codProduto;
+    }
+
+    public void setCodProduto(Integer codProduto) {
+        this.codProduto = codProduto;
+    }
+
+    public Integer getEstoque() {
+        return estoque;
+    }
+
+    public void setEstoque(Integer estoque) {
+        this.estoque = estoque;
+    }
+
+    public Categoria getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
     }
     
     
@@ -52,10 +88,10 @@ public class Tamanho implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Tamanho)) {
+        if (!(object instanceof Produto)) {
             return false;
         }
-        Tamanho other = (Tamanho) object;
+        Produto other = (Produto) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }
@@ -64,7 +100,7 @@ public class Tamanho implements Serializable {
 
     @Override
     public String toString() {
-        return "modelV1.Tamanho[ id=" + id + " ]";
+        return "modelV1.Produto[ id=" + id + " ]";
     }
     
 }

@@ -11,7 +11,7 @@ import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
 import java.util.List;
 import javax.persistence.PersistenceContext;
-import modelV1.Produto;
+import Model.Produto;
 
 /**
  *

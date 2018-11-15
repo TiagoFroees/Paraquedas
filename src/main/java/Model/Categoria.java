@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package modelV1;
+package Model;
 
 import java.io.Serializable;
 import javax.persistence.Entity;
@@ -16,34 +16,16 @@ import javax.persistence.Id;
  * @author aluno
  */
 @Entity
-public class ItemCompra implements Serializable {
+public class Categoria implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private String roupa;
+    private String calcado;
+    private String acessorio;
+    
     private Long id;
-    
-    private Float valorCompra;
-    private Estoque estoque;
 
-    public Float getValorCompra() {
-        return valorCompra;
-    }
-
-    public void setValorCompra(Float valorCompra) {
-        this.valorCompra = valorCompra;
-    }
-
-    public Estoque getEstoque() {
-        return estoque;
-    }
-
-    public void setEstoque(Estoque estoque) {
-        this.estoque = estoque;
-    }
-    
-    
-
-    
     public Long getId() {
         return id;
     }
@@ -62,10 +44,10 @@ public class ItemCompra implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof ItemCompra)) {
+        if (!(object instanceof Categoria)) {
             return false;
         }
-        ItemCompra other = (ItemCompra) object;
+        Categoria other = (Categoria) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }
@@ -74,7 +56,7 @@ public class ItemCompra implements Serializable {
 
     @Override
     public String toString() {
-        return "modelV1.ItemCompra[ id=" + id + " ]";
+        return "modelV1.Categoria[ id=" + id + " ]";
     }
     
 }
