@@ -12,6 +12,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 /**
  *
@@ -26,6 +27,8 @@ public class Compra implements Serializable {
     
     private LocalDate data;
     private float valorTotal;
+    
+    @OneToMany
     private List<ItemCompra> compras;
     private Fornecedor fornecedor;
 
