@@ -9,6 +9,7 @@
     <h:body>
         <h:form>
             <p:commandButton value="incluir" action="#{guiPessoa.novaPessoa()}"/>
+            <p:commandButton value="Voltar" action="index" ajax="false" />
 
             <p:dataTable var="p" value="#{guiPessoa.pessoas}" >
                 <p:column headerText="Nome">
@@ -25,6 +26,11 @@
 
                 <p:column headerText="Telefone">
                     <h:outputText value="#{p.telefone}" />
+                </p:column>
+                
+                <p:column >
+                    <p:commandButton value="Excluir" action="#{guiPessoa.excluir(pessoa)}" ajax="true" update="tblcliente" />
+                   
                 </p:column>
 
             </p:dataTable>
