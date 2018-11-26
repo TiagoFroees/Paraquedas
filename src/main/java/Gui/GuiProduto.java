@@ -6,6 +6,7 @@
 package Gui;
 
 import Dao.ProdutoDao;
+import Model.Pessoa;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
@@ -20,12 +21,11 @@ import Model.Produto;
 @Named(value = "guiProduto")
 @SessionScoped
 public class GuiProduto implements Serializable {
-    
-    private List<Produto>produtos;
+
+    private List<Produto> produtos;
     private Produto produto;
     private Boolean incluindo;
-    
-    
+
     @PersistenceContext
     ProdutoDao daoproduto;
 
@@ -34,25 +34,32 @@ public class GuiProduto implements Serializable {
      */
     public GuiProduto() {
     }
-           
-    public String iniciarListaProdutos(){
-       produtos = daoproduto.getProdutos();
-          return "LstProdutos";
-                      
+
+    public String iniciarListaProdutos() {
+        produtos = daoproduto.getProdutos();
+        return "LstProdutos";
+
     }
-    public String novoProduto(){
+
+    public String novoProduto() {
         produto = new Produto();
         incluindo = true;
         return "CadProdutos";
-        
-    } 
-    
-    public String gravarProduto(){
-        if(incluindo){
+
+    }
+
+    public String gravarProduto() {
+        if (incluindo) {
             daoproduto.incluir(produto);
-        }else{
+        } else {
             daoproduto.alterar(produto);
         }
+        produtos = daoproduto.getProdutos();
+        return "LstProdutos";
+    }
+
+    public String excluir(Produto produto) {
+        daoproduto.excluir(produto);
         produtos = daoproduto.getProdutos();
         return "LstProdutos";
     }
@@ -77,5 +84,4 @@ public class GuiProduto implements Serializable {
         this.incluindo = incluindo;
     }
 
-    
 }

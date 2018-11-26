@@ -4,32 +4,36 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:p="http://primefaces.org/ui">
     <h:head>
-        <title>Pessoas</title>
+        <title>Produtos</title>
     </h:head>
     <h:body>
         <h:form>
-            <p:commandButton value="incluir" action="#{guiPessoa.novaPessoa()}"/>
+            <p:commandButton value="incluir" action="#{guiProduto.novoProduto()}"/>
             <p:commandButton value="Voltar" action="index" ajax="false" />
 
-            <p:dataTable var="p" value="#{guiPessoa.pessoas}" >
+            <p:dataTable var="p" value="#{guiProduto.produtos}" >
+                <p:column headerText="CodProduto">
+                    <h:outputText value="#{p.codProduto}" />
+                </p:column>
+
                 <p:column headerText="Nome">
                     <h:outputText value="#{p.nome}" />
                 </p:column>
 
-                <p:column headerText="Endereco">
-                    <h:outputText value="#{p.endereco}" />
+                <p:column headerText="Modelo">
+                    <h:outputText value="#{p.modelo}" />
                 </p:column>
 
-                <p:column headerText="Bairro">
-                    <h:outputText value="#{p.bairro}" />
+                <p:column headerText="Categoria">
+                    <h:outputText value="#{p.categoria}" />
                 </p:column>
-
-                <p:column headerText="Telefone">
-                    <h:outputText value="#{p.telefone}" />
+                
+                <p:column headerText="Estoque">
+                    <h:outputText value="#{p.estoque}" />
                 </p:column>
                 
                 <p:column >
-                    <p:commandButton value="Excluir" action="#{guiPessoa.excluir(pessoa)}" ajax="true" update="tblpessoa" />
+                    <p:commandButton value="Excluir" action="#{guiProduto.excluir(produto)}" ajax="true" update="tblproduto" />
                    
                 </p:column>
 
