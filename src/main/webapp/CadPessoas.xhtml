@@ -10,23 +10,31 @@
     <h:body>
         <h:form>
             <p:panelGrid columns="2">
-                
+
                 <p:outputLabel value="Nome" />
                 <p:inputText value="#{guiPessoa.pessoa.nome}"/>
-                             
+
                 <p:outputLabel value="Endereco" />
                 <p:inputText value="#{guiPessoa.pessoa.endereco}"/>
-                 
+
                 <p:outputLabel value="Bairro" />
                 <p:inputText value="#{guiPessoa.pessoa.bairro}"/>
-                             
+
                 <p:outputLabel value="Telefone" />
                 <p:inputText value="#{guiPessoa.pessoa.telefone}"/>
+
+                <p:outputLabel value="Email" />
+                <p:inputText value="#{guiPessoa.pessoa.email}"/>
+
+
+                <p:outputLabel value="DataNascimento" />
+                <p:inputText value="#{guiPessoa.pessoa.dataNascimento}"/>
+                
                 
                 <p:commandButton value="Gravar" action="#{guiPessoa.gravarPessoa()}"/>
-                 
-        </p:panelGrid> 
-    </h:form>
+
+            </p:panelGrid> 
+        </h:form>
 
 </html>
 

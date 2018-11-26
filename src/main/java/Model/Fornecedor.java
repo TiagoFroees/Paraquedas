@@ -6,6 +6,7 @@
 package Model;
 
 import java.io.Serializable;
+import java.util.Objects;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -21,6 +22,26 @@ public class Fornecedor implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    
+    private Integer cnpj;
+    private String Contato;
+
+    public Integer getCnpj() {
+        return cnpj;
+    }
+
+    public void setCnpj(Integer cnpj) {
+        this.cnpj = cnpj;
+    }
+
+    public String getContato() {
+        return Contato;
+    }
+
+    public void setContato(String Contato) {
+        this.Contato = Contato;
+    }
+    
 
     public Long getId() {
         return id;
@@ -32,27 +53,40 @@ public class Fornecedor implements Serializable {
 
     @Override
     public int hashCode() {
-        int hash = 0;
-        hash += (id != null ? id.hashCode() : 0);
+        int hash = 5;
         return hash;
     }
 
     @Override
-    public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Fornecedor)) {
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
             return false;
         }
-        Fornecedor other = (Fornecedor) object;
-        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Fornecedor other = (Fornecedor) obj;
+        if (!Objects.equals(this.Contato, other.Contato)) {
+            return false;
+        }
+        if (!Objects.equals(this.id, other.id)) {
+            return false;
+        }
+        if (!Objects.equals(this.cnpj, other.cnpj)) {
             return false;
         }
         return true;
     }
+    
 
     @Override
     public String toString() {
-        return "modelV1.Fornecedor[ id=" + id + " ]";
+        return "Fornecedor{" + "id=" + id + ", cnpj=" + cnpj + ", Contato=" + Contato + '}';
     }
+
+
     
 }

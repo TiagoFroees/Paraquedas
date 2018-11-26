@@ -8,12 +8,15 @@
     </h:head>
     <h:body>
         <h:form>
-          
+
             <p:commandButton value="incluir" action="#{guiFornecedor.novoFornecedor()}"/>
-            
+
             <p:dataTable var="p" value="#{guiFornecedor.fornecedores}" >
-                <p:column headerText="Id">
-                    <h:outputText value="#{p.id}" />
+                <p:column headerText="Cnpj">
+                    <h:outputText value="#{p.cnpj}" />
+                </p:column>
+                <p:column headerText="Contato">
+                    <h:outputText value="#{p.contato}" />
                 </p:column>
 
 

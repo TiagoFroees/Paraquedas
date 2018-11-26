@@ -6,6 +6,8 @@
 package Model;
 
 import java.io.Serializable;
+import java.time.LocalDate;
+import java.util.Objects;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -27,6 +29,8 @@ public class Pessoa implements Serializable {
     private String endereco;
     private String bairro;
     private String telefone;
+    private String email;
+    private LocalDate dataNascimento;
 
    
     public Long getId() {
@@ -37,31 +41,7 @@ public class Pessoa implements Serializable {
         this.id = id;
     }
 
-    @Override
-    public int hashCode() {
-        int hash = 0;
-        hash += (id != null ? id.hashCode() : 0);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Pessoa)) {
-            return false;
-        }
-        Pessoa other = (Pessoa) object;
-        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
-    public String toString() {
-        return this.nome;
-    }
-
+ 
     public String getNome() {
         return nome;
     }
@@ -93,5 +73,58 @@ public class Pessoa implements Serializable {
     public void setTelefone(String telefone) {
         this.telefone = telefone;
     }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public LocalDate getDataNascimento() {
+        return dataNascimento;
+    }
+
+    public void setDataNascimento(LocalDate dataNascimento) {
+        this.dataNascimento = dataNascimento;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Pessoa other = (Pessoa) obj;
+        if (!Objects.equals(this.nome, other.nome)) {
+            return false;
+        }
+        if (!Objects.equals(this.email, other.email)) {
+            return false;
+        }
+        if (!Objects.equals(this.id, other.id)) {
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public String toString() {
+        return "Pessoa{" + "id=" + id + ", nome=" + nome + ", endereco=" + endereco + ", bairro=" + bairro + ", telefone=" + telefone + ", email=" + email + ", dataNascimento=" + dataNascimento + '}';
+    }
+    
+    
     
 }

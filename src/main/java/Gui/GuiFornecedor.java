@@ -77,8 +77,8 @@ public class GuiFornecedor implements Serializable {
 
     public void setIncluindo(Boolean incluindo) {
         this.incluindo = incluindo;
+        
     }
-    
     
     }
     

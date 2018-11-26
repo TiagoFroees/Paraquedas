@@ -27,10 +27,19 @@
                 <p:column headerText="Telefone">
                     <h:outputText value="#{p.telefone}" />
                 </p:column>
+
+                <p:column headerText="Email">
+                    <h:outputText value="#{p.email}" />
+                </p:column>
+
+                <p:column headerText="DataNascimento">
+                    <h:outputText value="#{p.dataNascimento}" />
+                </p:column>
+                
                 
                 <p:column >
                     <p:commandButton value="Excluir" action="#{guiPessoa.excluir(pessoa)}" ajax="true" update="tblpessoa" />
-                   
+
                 </p:column>
 
             </p:dataTable>
