@@ -12,6 +12,28 @@
             <p:commandButton value="incluir" action="#{guiFornecedor.novoFornecedor()}"/>
 
             <p:dataTable var="p" value="#{guiFornecedor.fornecedores}" >
+
+                <p:column headerText="Nome">
+                    <h:outputText value="#{p.nome}" />
+                </p:column>
+
+                <p:column headerText="Endereco">
+                    <h:outputText value="#{p.endereco}" />
+                </p:column>
+
+
+                <p:column headerText="Bairro">
+                    <h:outputText value="#{p.bairro}" />
+                </p:column>
+
+                <p:column headerText="Telefone">
+                    <h:outputText value="#{p.telefone}" />
+                </p:column>
+                
+                <p:column headerText="Email">
+                    <h:outputText value="#{p.email}" />
+                </p:column>
+         
                 <p:column headerText="Cnpj">
                     <h:outputText value="#{p.cnpj}" />
                 </p:column>

@@ -16,7 +16,7 @@ import javax.persistence.Id;
  * @author aluno
  */
 @Entity
-public class Funcionario implements Serializable {
+public class Funcionario extends Pessoa{
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
