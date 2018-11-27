@@ -63,4 +63,30 @@ public class GuiCliente implements Serializable {
         return "LstClientes";
     }
 
+    public List<Cliente> getClientes() {
+        return clientes;
+    }
+
+    public void setClientes(List<Cliente> clientes) {
+        this.clientes = clientes;
+    }
+
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
+    }
+
+    public Boolean getIncluindo() {
+        return incluindo;
+    }
+
+    public void setIncluindo(Boolean incluindo) {
+        this.incluindo = incluindo;
+    }
+    
+    
+
 }
