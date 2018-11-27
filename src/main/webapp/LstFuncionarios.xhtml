@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Funcionarios</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <p:commandButton value="incluir" action="#{guiFuncionario.novoFuncionario()}"/>
+            <p:commandButton value="Voltar" action="index" ajax="false" />
+
+            <p:dataTable var="f" value="#{guiFuncionario.funcionarios}" >
+                <p:column headerText="Nome">
+                    <h:outputText value="#{f.nome}" />
+                </p:column>
+
+                <p:column headerText="Endereco">
+                    <h:outputText value="#{f.endereco}" />
+                </p:column>
+
+                <p:column headerText="Bairro">
+                    <h:outputText value="#{f.bairro}" />
+                </p:column>
+
+                <p:column headerText="Telefone">
+                    <h:outputText value="#{f.telefone}" />
+                </p:column>
+
+                <p:column headerText="Email">
+                    <h:outputText value="#{f.email}" />
+                </p:column>
+
+                <p:column headerText="DataNascimento">
+                    <h:outputText value="#{f.dataNascimento}" />
+                </p:column>
+
+
+                <p:column >
+                    <p:commandButton value="Excluir" action="#{guiFuncionario.excluir(funcionario)}" ajax="true" update="tblfuncionario" />
+
+                </p:column>
+
+            </p:dataTable>
+
+        </h:form>
+    </h:body>
+</html>
+
