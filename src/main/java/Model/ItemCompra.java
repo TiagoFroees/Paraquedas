@@ -43,8 +43,6 @@ public class ItemCompra implements Serializable {
     }
     
     
-
-    
     public Long getId() {
         return id;
     }

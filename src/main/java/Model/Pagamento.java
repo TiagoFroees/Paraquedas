@@ -8,6 +8,7 @@ package Model;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Objects;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -67,19 +68,32 @@ public class Pagamento implements Serializable {
 
     @Override
     public int hashCode() {
-        int hash = 0;
-        hash += (id != null ? id.hashCode() : 0);
+        int hash = 3;
         return hash;
     }
 
     @Override
-    public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Pagamento)) {
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
             return false;
         }
-        Pagamento other = (Pagamento) object;
-        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Pagamento other = (Pagamento) obj;
+        if (!Objects.equals(this.id, other.id)) {
+            return false;
+        }
+        if (!Objects.equals(this.dataPagamento, other.dataPagamento)) {
+            return false;
+        }
+        if (!Objects.equals(this.valorPago, other.valorPago)) {
+            return false;
+        }
+        if (!Objects.equals(this.formapgtos, other.formapgtos)) {
             return false;
         }
         return true;
@@ -87,7 +101,8 @@ public class Pagamento implements Serializable {
 
     @Override
     public String toString() {
-        return "modelV1.Pagamento[ id=" + id + " ]";
+        return "Pagamento{" + "id=" + id + ", dataPagamento=" + dataPagamento + ", valorPago=" + valorPago + ", formapgtos=" + formapgtos + '}';
     }
+
     
 }

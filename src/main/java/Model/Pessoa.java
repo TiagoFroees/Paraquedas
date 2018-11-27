@@ -92,7 +92,7 @@ public class Pessoa implements Serializable {
 
     @Override
     public int hashCode() {
-        int hash = 7;
+        int hash = 3;
         return hash;
     }
 
@@ -111,10 +111,22 @@ public class Pessoa implements Serializable {
         if (!Objects.equals(this.nome, other.nome)) {
             return false;
         }
+        if (!Objects.equals(this.endereco, other.endereco)) {
+            return false;
+        }
+        if (!Objects.equals(this.bairro, other.bairro)) {
+            return false;
+        }
+        if (!Objects.equals(this.telefone, other.telefone)) {
+            return false;
+        }
         if (!Objects.equals(this.email, other.email)) {
             return false;
         }
         if (!Objects.equals(this.id, other.id)) {
+            return false;
+        }
+        if (!Objects.equals(this.dataNascimento, other.dataNascimento)) {
             return false;
         }
         return true;
@@ -124,7 +136,7 @@ public class Pessoa implements Serializable {
     public String toString() {
         return "Pessoa{" + "id=" + id + ", nome=" + nome + ", endereco=" + endereco + ", bairro=" + bairro + ", telefone=" + telefone + ", email=" + email + ", dataNascimento=" + dataNascimento + '}';
     }
-    
-    
+
+   
     
 }
