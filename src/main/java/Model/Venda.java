@@ -8,6 +8,7 @@ package Model;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Objects;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -91,10 +92,6 @@ public class Venda implements Serializable {
         this.itemvendas = itemvendas;
     }
     
-    
-    
-    
-
     public Long getId() {
         return id;
     }
@@ -105,19 +102,44 @@ public class Venda implements Serializable {
 
     @Override
     public int hashCode() {
-        int hash = 0;
-        hash += (id != null ? id.hashCode() : 0);
+        int hash = 7;
         return hash;
     }
 
     @Override
-    public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Venda)) {
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
             return false;
         }
-        Venda other = (Venda) object;
-        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Venda other = (Venda) obj;
+        if (!Objects.equals(this.id, other.id)) {
+            return false;
+        }
+        if (!Objects.equals(this.data, other.data)) {
+            return false;
+        }
+        if (!Objects.equals(this.hora, other.hora)) {
+            return false;
+        }
+        if (!Objects.equals(this.valorTotal, other.valorTotal)) {
+            return false;
+        }
+        if (!Objects.equals(this.pagamento, other.pagamento)) {
+            return false;
+        }
+        if (!Objects.equals(this.cliente, other.cliente)) {
+            return false;
+        }
+        if (!Objects.equals(this.funcionario, other.funcionario)) {
+            return false;
+        }
+        if (!Objects.equals(this.itemvendas, other.itemvendas)) {
             return false;
         }
         return true;
@@ -125,7 +147,8 @@ public class Venda implements Serializable {
 
     @Override
     public String toString() {
-        return "modelV1.Venda[ id=" + id + " ]";
+        return "Venda{" + "id=" + id + ", data=" + data + ", hora=" + hora + ", valorTotal=" + valorTotal + ", pagamento=" + pagamento + ", cliente=" + cliente + ", funcionario=" + funcionario + ", itemvendas=" + itemvendas + '}';
     }
-    
+
+
 }

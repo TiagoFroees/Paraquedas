@@ -6,6 +6,7 @@
 package Model;
 
 import java.io.Serializable;
+import java.util.Objects;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -80,19 +81,38 @@ public class Produto implements Serializable {
 
     @Override
     public int hashCode() {
-        int hash = 0;
-        hash += (id != null ? id.hashCode() : 0);
+        int hash = 7;
         return hash;
     }
 
     @Override
-    public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Produto)) {
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
             return false;
         }
-        Produto other = (Produto) object;
-        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Produto other = (Produto) obj;
+        if (!Objects.equals(this.nome, other.nome)) {
+            return false;
+        }
+        if (!Objects.equals(this.modelo, other.modelo)) {
+            return false;
+        }
+        if (!Objects.equals(this.id, other.id)) {
+            return false;
+        }
+        if (!Objects.equals(this.codProduto, other.codProduto)) {
+            return false;
+        }
+        if (!Objects.equals(this.estoque, other.estoque)) {
+            return false;
+        }
+        if (this.categoria != other.categoria) {
             return false;
         }
         return true;
@@ -100,7 +120,9 @@ public class Produto implements Serializable {
 
     @Override
     public String toString() {
-        return "modelV1.Produto[ id=" + id + " ]";
+        return "Produto{" + "id=" + id + ", nome=" + nome + ", modelo=" + modelo + ", codProduto=" + codProduto + ", estoque=" + estoque + ", categoria=" + categoria + '}';
     }
+
+
     
 }
