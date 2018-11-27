@@ -6,6 +6,7 @@
 package Model;
 
 import java.io.Serializable;
+import java.util.Objects;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -60,20 +61,27 @@ public class ItemVenda implements Serializable {
     }
 
     @Override
-    public int hashCode() {
-        int hash = 0;
-        hash += (id != null ? id.hashCode() : 0);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof ItemVenda)) {
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
             return false;
         }
-        ItemVenda other = (ItemVenda) object;
-        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final ItemVenda other = (ItemVenda) obj;
+        if (!Objects.equals(this.id, other.id)) {
+            return false;
+        }
+        if (!Objects.equals(this.valor, other.valor)) {
+            return false;
+        }
+        if (!Objects.equals(this.quantidade, other.quantidade)) {
+            return false;
+        }
+        if (!Objects.equals(this.estoque, other.estoque)) {
             return false;
         }
         return true;
@@ -81,7 +89,10 @@ public class ItemVenda implements Serializable {
 
     @Override
     public String toString() {
-        return "modelV1.ItemVenda[ id=" + id + " ]";
+        return "ItemVenda{" + "id=" + id + ", valor=" + valor + ", quantidade=" + quantidade + ", estoque=" + estoque + '}';
     }
+    
+    
+
     
 }
