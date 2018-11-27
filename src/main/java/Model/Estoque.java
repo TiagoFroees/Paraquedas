@@ -7,6 +7,7 @@ package Model;
 
 import java.io.Serializable;
 import java.util.List;
+import java.util.Objects;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -84,19 +85,38 @@ public class Estoque implements Serializable {
 
     @Override
     public int hashCode() {
-        int hash = 0;
-        hash += (id != null ? id.hashCode() : 0);
+        int hash = 3;
         return hash;
     }
 
     @Override
-    public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Estoque)) {
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
             return false;
         }
-        Estoque other = (Estoque) object;
-        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Estoque other = (Estoque) obj;
+        if (!Objects.equals(this.id, other.id)) {
+            return false;
+        }
+        if (!Objects.equals(this.quantidade, other.quantidade)) {
+            return false;
+        }
+        if (!Objects.equals(this.codEstoque, other.codEstoque)) {
+            return false;
+        }
+        if (!Objects.equals(this.produtos, other.produtos)) {
+            return false;
+        }
+        if (!Objects.equals(this.cor, other.cor)) {
+            return false;
+        }
+        if (!Objects.equals(this.tamanho, other.tamanho)) {
             return false;
         }
         return true;
@@ -104,7 +124,10 @@ public class Estoque implements Serializable {
 
     @Override
     public String toString() {
-        return "modelV1.Estoque[ id=" + id + " ]";
+        return "Estoque{" + "id=" + id + ", quantidade=" + quantidade + ", codEstoque=" + codEstoque + ", produtos=" + produtos + ", cor=" + cor + ", tamanho=" + tamanho + '}';
     }
+
+ 
+    
     
 }

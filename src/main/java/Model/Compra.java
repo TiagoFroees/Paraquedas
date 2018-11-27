@@ -8,6 +8,7 @@ package Model;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Objects;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -76,19 +77,35 @@ public class Compra implements Serializable {
 
     @Override
     public int hashCode() {
-        int hash = 0;
-        hash += (id != null ? id.hashCode() : 0);
+        int hash = 7;
         return hash;
     }
 
     @Override
-    public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Compra)) {
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
             return false;
         }
-        Compra other = (Compra) object;
-        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Compra other = (Compra) obj;
+        if (Float.floatToIntBits(this.valorTotal) != Float.floatToIntBits(other.valorTotal)) {
+            return false;
+        }
+        if (!Objects.equals(this.id, other.id)) {
+            return false;
+        }
+        if (!Objects.equals(this.data, other.data)) {
+            return false;
+        }
+        if (!Objects.equals(this.compras, other.compras)) {
+            return false;
+        }
+        if (!Objects.equals(this.fornecedor, other.fornecedor)) {
             return false;
         }
         return true;
@@ -96,7 +113,8 @@ public class Compra implements Serializable {
 
     @Override
     public String toString() {
-        return "modelV1.Compra[ id=" + id + " ]";
+        return "Compra{" + "id=" + id + ", data=" + data + ", valorTotal=" + valorTotal + ", compras=" + compras + ", fornecedor=" + fornecedor + '}';
     }
+
     
 }
