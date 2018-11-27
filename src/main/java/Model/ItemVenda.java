@@ -61,6 +61,12 @@ public class ItemVenda implements Serializable {
     }
 
     @Override
+    public int hashCode() {
+        int hash = 3;
+        return hash;
+    }
+
+    @Override
     public boolean equals(Object obj) {
         if (this == obj) {
             return true;
@@ -91,8 +97,6 @@ public class ItemVenda implements Serializable {
     public String toString() {
         return "ItemVenda{" + "id=" + id + ", valor=" + valor + ", quantidade=" + quantidade + ", estoque=" + estoque + '}';
     }
-    
-    
 
     
 }
