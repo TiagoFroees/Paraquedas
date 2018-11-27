@@ -1,42 +1,40 @@
-
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:p="http://primefaces.org/ui">
     <h:head>
-        <title>Cadastro de Pessoa</title>
+        <title>Cadastro de Cliente</title>
     </h:head>
     <h:body>
-        <h:form>
-            <p:panelGrid columns="2">
+         <h:form>
+             <p:panelGrid columns="2">
 
                 <p:outputLabel value="Nome" />
-                <p:inputText value="#{guiPessoa.pessoa.nome}"/>
+                <p:inputText value="#{guiCliente.cliente.nome}"/>
 
                 <p:outputLabel value="Endereco" />
-                <p:inputText value="#{guiPessoa.pessoa.endereco}"/>
+                <p:inputText value="#{guiCliente.cliente.endereco}"/>
 
                 <p:outputLabel value="Bairro" />
-                <p:inputText value="#{guiPessoa.pessoa.bairro}"/>
+                <p:inputText value="#{guiCliente.cliente.bairro}"/>
 
                 <p:outputLabel value="Telefone" />
-                <p:inputText value="#{guiPessoa.pessoa.telefone}"/>
+                <p:inputText value="#{guiCliente.cliente.telefone}"/>
 
                 <p:outputLabel value="Email" />
-                <p:inputText value="#{guiPessoa.pessoa.email}"/>
+                <p:inputText value="#{guiCliente.cliente.email}"/>
 
 
                 <p:outputLabel value="DataNascimento" />
-                <p:inputText value="#{guiPessoa.pessoa.dataNascimento}"/>
+                <p:inputText value="#{guiCliente.cliente.dataNascimento}"/>
                 
                 
-                <p:commandButton value="Gravar" action="#{guiPessoa.gravarPessoa()}"/>
+                <p:commandButton value="Gravar" action="#{guiCliente.gravarCliente()}"/>
 
             </p:panelGrid> 
         </h:form>
-        
-         </h:body>
 
+    </h:body>
 </html>
 
